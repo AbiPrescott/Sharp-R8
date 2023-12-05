@@ -85,8 +85,16 @@ Computer architecture focuses on the elements of the system that is visible to t
 
 ### 2.1 User Requirements
 
+All that the user needs from this computer is a simple yet functional text editor to write and edit their source code on for the robotic arm. Therefore, the basic functionalities that the computer must include are the following:
+- a text-based user interface from which the user can view their source code
+- a writing tool such as a keypad
+- the ability to render all the signals sent from the keypad onto the LCD screen instantaneosly (as seen by the user)
+- support for scrolling up, down, left and right within the source code
+- a cursor to enable the user to see which part they are editing
+- the ability to save the source code into external storage for future use.
 
 ### 2.2 Instruction Format
+
 
 ### 2.3 Data Types
 
