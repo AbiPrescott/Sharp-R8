@@ -77,13 +77,13 @@ This document  provides an exhaustive description of the system, Sharp R16: from
 
 ## 1 What is Sharp R16? 
 
-Sharp R16 is a *highly sophisticated* computer that functions mainly as a simple text editor. It is composed of the computer itself and its peripherals such as a keypad, a dotted LCD screen, and a robotic arm. The machine provides the user with a tool to write and execute programs for both the computer itself and the robotic arm using the LCD screen to view and edit the source code and the keypad to write it in. 
+Sharp R16 is a 16-bit *highly sophisticated* computer that functions mainly as a simple text editor. It is composed of the computer itself and its peripherals such as a keypad, a dotted LCD screen, and a robotic arm. The machine provides the user with a tool to write and execute programs for both the computer itself and the robotic arm using the LCD screen to view and edit the source code and the keypad to write it in. 
 
 ## 2 Architecture
 
 Computer architecture focuses on the elements of the system that is visible to the user. That is, the information about the system that would be useful to the user. Therefore, the scope of this section follows the definition of the focus exaclty.
 
-### 2.1 User Requirements
+### User Requirements
 
 All that the user needs from this computer is a simple yet functional text editor to write and edit their source code on for the robotic arm. Therefore, the basic functionalities that the computer must include are the following:
 - a text-based user interface from which the user can view their source code
@@ -93,14 +93,32 @@ All that the user needs from this computer is a simple yet functional text edito
 - a cursor to enable the user to see which part they are editing
 - the ability to save the source code into external storage for future use.
 
-### 2.2 Instruction Format
+### Byte Ordering (Endianness)
+
+Sharp R16 implements the big endian architecture rather than the little endian. That is, the data is stored in main memory with the most significant byte first (in the lowest address of that 16 bit word). The reasons for choosing big endian over little endian are 3 fold:
+- since shifting is used frequently in this machine, employing big endianness makes the organization of the computer a lot simpler
+- it is easier for the user to read data stored in big endian.
+- since the CPU in this machine operates on the data in 16 it words, there is no longer a distinct advantage that little endian has over big endian in regards to arithmetic operations. Therefore, there is no major overhead for the CPU when implenting big endian compared to little endian in this case. 
+
+### Instruction Format
+
+Each instruction is made of 16 bits. The first 4 are allocated to the 16 different opcodes, the next 2 are allocated for the 4 different addressing modes, and the last 10 bits are for the source and destination with 5 bits allocated to each field. 
+
+### Data Types
+
+### Addressing Modes
+
+### ISA
+
+**Data Transfer**
+**Arithmetic**
+**Logical**
+**Conversion**
+**I/O**
+**System Control**
+**Transfer of Control**
 
 
-### 2.3 Data Types
-
-### 2.4 Addressing Modes
-
-### 2.5 Arithmetic Operations
 
 ## 3 Organization
 
