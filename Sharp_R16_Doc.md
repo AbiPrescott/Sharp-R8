@@ -104,6 +104,8 @@ Sharp R16 implements the big endian architecture rather than the little endian. 
 
 Each instruction is made of 16 bits. The first 4 are allocated to the 16 different opcodes, the next 2 are allocated for the 4 different addressing modes, and the last 10 bits are for the source and destination with 5 bits allocated to each field. 
 
+
+
 ### Data Types
 
 ### Addressing Modes
