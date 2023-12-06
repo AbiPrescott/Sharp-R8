@@ -113,11 +113,17 @@ Each instruction is made of 16 bits. The first 4 are allocated to the 16 differe
 ### ISA
 
 **Data Transfer**
+
 **Arithmetic**
+
 **Logical**
+
 **Conversion**
+
 **I/O**
+
 **System Control**
+
 **Transfer of Control**
 
 
