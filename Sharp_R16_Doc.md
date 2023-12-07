@@ -102,11 +102,31 @@ Sharp R16 implements the big endian architecture rather than the little endian. 
 
 ### Instruction Format
 
-Each instruction is made of 16 bits. The first 4 are allocated to the 16 different opcodes, the next 2 are allocated for the 4 different addressing modes, and the last 10 bits are for the source and destination with 5 bits allocated to each field. 
+Each instruction is 32 bits long. Sharp R16 is indeed a 16 bit computer in the sense that the address bus is 16 bits. However, 32 bits is needed to execute the longest instruction, so up to 2 fetch cylces are needed to per instruction cycle. 
+
+Sharp R16 handles instructions of varying length. However, at least one 16 bit instruction is fetched per cycle even if the instruction is less than 16 bits (for simplicity's sake). 
+
+The instructions support up to 2 operands. Opertations can be made between 2 registers, or one register and one address. However, 2 address operands are not supported. 
+
+The follwing diagram illustrates all the different instruction formats in Sharp R16:
+
+![Instruction Formats](/home/dora/github/Sharp_R16/Diagrams/Instruction_Format.drawio.png) 
 
 
+*The variable instruction length is indeed an abnormal (and maybe somewhat contradictory) character trait of a RISC computer like Sharp R16. However, it is easier to not use all the 16 bits instead of trying to save memory and splitting up the address.*
 
 ### Data Types
+
+Sharp R16 supports the following data types:
+- Logical
+	- true
+	- false
+- Arithmetic
+	- integers
+- Characters
+	- ASCII
+
+The Logical data type are useful for branching instructions as well as non-integer arithmetic operations. Sharp R16 does not need to perform any mathematical operations on decimal numbers, so only up to 16 bit integers are supported. As for the characters that are supported, ASCII is used since the only use for characters is to display mnuemonic programs in the LCD module rather than binary code. Thus, only english characters are necessary.   
 
 ### Addressing Modes
 
@@ -126,8 +146,11 @@ Each instruction is made of 16 bits. The first 4 are allocated to the 16 differe
 
 **Transfer of Control**
 
+### Flags
 
-
+- carry
+- overflow
+- do I need to fetch 2 instructions? (0 no, 1 yes) 
 ## 3 Organization
 
 ### 3.1 Specifications
