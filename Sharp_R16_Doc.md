@@ -110,7 +110,7 @@ The instructions support up to 2 operands. Opertations can be made between 2 reg
 
 The follwing diagram illustrates all the different instruction formats in Sharp R16:
 
-![Instruction Formats](/home/dora/github/Sharp_R16/Diagrams/Instruction_Format.drawio.png) 
+![Instruction Formats](./Diagrams/Instruction_Format.drawio.png) 
 
 
 *The variable instruction length is indeed an abnormal (and maybe somewhat contradictory) character trait of a RISC computer like Sharp R16. However, it is easier to not use all the 16 bits instead of trying to save memory and splitting up the address.*
